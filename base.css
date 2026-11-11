@@ -1,0 +1,102 @@
+:root{
+  --accent:#c98a94;          /* пыльная роза */
+  --accent-deep:#b0717c;
+  --accent-soft:rgba(201,138,148,.14);
+  --accent-line:rgba(201,138,148,.28);
+  --bg:#fdfbfa;
+  --card:#ffffff;
+  --text:#4a3f42;
+  --text-soft:#9b8b8e;
+  --border:#f0e7e5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.7;
+  font-size:16px;
+  overflow-x:hidden;
+  -webkit-user-select:none;user-select:none;
+}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:500;color:#3e3336;letter-spacing:.01em}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+img{display:block}
+
+/* тонкая разделительная линия между секциями */
+section + section{border-top:1px solid var(--border)}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 48px;text-align:center;border-top:none}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:14px;
+  letter-spacing:.28em;text-transform:uppercase;
+  font-size:.72rem;color:var(--accent-deep);font-weight:600;
+}
+.hero .kicker::before,.hero .kicker::after{content:'';width:36px;height:1px;background:var(--accent-line)}
+.hero h1{font-size:clamp(2rem,4.6vw,3rem);margin:18px 0 6px;line-height:1.22}
+.hero h1 svg{width:.8em;height:.8em;vertical-align:-.06em;fill:var(--accent);margin:0 .06em}
+.hero .lead{max-width:600px;margin:0 auto;color:var(--text-soft);font-size:1.02rem;font-weight:300}
+.portrait-box{position:relative;display:inline-block;margin-top:44px}
+.portrait-box::before{
+  content:'';position:absolute;inset:-11px;
+  border-radius:32px;
+  border:1.5px solid var(--accent-line);
+}
+.portrait{
+  width:min(258px,64vw);aspect-ratio:1/1;object-fit:cover;
+  object-position:50% 3%;
+  border-radius:22px;
+  border:4px solid #fff;
+  box-shadow:0 0 0 1px var(--accent-line),0 30px 50px -28px rgba(160,110,120,.35);
+  display:block;
+}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:999px;padding:8px 16px;font-size:.86rem;color:var(--text-soft);font-weight:400;
+}
+.badge svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- section headers ---------- */
+.sec-head{margin-bottom:40px}
+.sec-head.center{text-align:center}
+.sec-head .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--accent-line);color:var(--accent-deep);
+  font-size:.82rem;font-family:Georgia,serif;margin-bottom:16px;
+  background:var(--accent-soft);
+}
+.sec-head h2{font-size:clamp(1.45rem,3vw,1.95rem)}
+.sec-head p{color:var(--text-soft);max-width:600px;margin-top:10px;font-weight:300}
+.sec-head.center p{margin-left:auto;margin-right:auto}
+.sec-head h2::after{
+  content:'';display:block;width:44px;height:1px;background:var(--accent);opacity:.55;margin-top:16px;
+}
+.sec-head.center h2::after{margin-left:auto;margin-right:auto}
+
+/* ---------- reveal (плавное появление) ---------- */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
+/* ---------- rows ---------- */
+.row{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.row.rev{grid-template-columns:1.05fr 1fr}
+.row.rev .pic{order:2}
+.pic{overflow:hidden;border-radius:18px;box-shadow:0 24px 44px -26px rgba(160,110,120,.3)}
+.pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;transition:transform .7s cubic-bezier(.25,.8,.35,1)}
+.row .txt p{margin-bottom:14px;color:#5d5154}
+.row .txt p:last-child{margin-bottom:0}
+.row .txt .big{font-size:1.06rem;color:var(--text);font-weight:600}
+.hl{color:var(--accent-deep);font-weight:600}
+/* плавное приближение фото */
+.pic{overflow:hidden;border-radius:18px;box-shadow:0 24px 44px -26px rgba(160,110,120,.3)}
+.pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;transition:transform .7s cubic-bezier(.25,.8,.35,1)}
+a.link{color:var(--accent-deep);text-decoration:none;border-bottom:1px solid var(--accent-line);transition:border-color .2s}
+a.link:hover{border-color:var(--accent-deep)}
+.it{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:500}
