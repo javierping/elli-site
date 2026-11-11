@@ -64,13 +64,6 @@ section + section{border-top:1px solid var(--border)}
 /* ---------- section headers ---------- */
 .sec-head{margin-bottom:40px}
 .sec-head.center{text-align:center}
-.sec-head .num{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:34px;height:34px;border-radius:50%;
-  border:1px solid var(--accent-line);color:var(--accent-deep);
-  font-size:.82rem;font-family:Georgia,serif;margin-bottom:16px;
-  background:var(--accent-soft);
-}
 .sec-head h2{font-size:clamp(1.45rem,3vw,1.95rem)}
 .sec-head p{color:var(--text-soft);max-width:600px;margin-top:10px;font-weight:300}
 .sec-head.center p{margin-left:auto;margin-right:auto}
