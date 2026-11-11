@@ -35,7 +35,7 @@
 /* ---------- format ---------- */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .duo figure{position:relative;border-radius:16px;overflow:hidden}
-.duo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;
+.duo img{width:100%;aspect-ratio:3/4;max-height:min(56vh,440px);object-fit:cover;border-radius:16px;
   box-shadow:0 20px 38px -24px rgba(160,110,120,.3);
   transition:transform .8s cubic-bezier(.25,.8,.35,1)}
 .duo figure:hover img{transform:scale(1.045)}
@@ -92,7 +92,7 @@ footer a{color:var(--accent-deep);text-decoration:none;font-weight:400}
 .car-viewport.dragging .car-inner{transition:none}
 .car-inner img{
   flex:0 0 auto;min-width:0;
-  width:calc((100% - 40px)/3);height:380px;object-fit:cover;
+  width:calc((100% - 40px)/3);height:min(380px,52vh);object-fit:cover;
   border-radius:16px;
   box-shadow:0 18px 36px -24px rgba(160,110,120,.32);
   user-select:none;-webkit-user-drag:none;
@@ -121,10 +121,33 @@ footer a{color:var(--accent-deep);text-decoration:none;font-weight:400}
   .edu-grid{grid-template-columns:repeat(2,1fr)}
   section{padding:52px 0}
   .car{padding:0 12px}
-  .car-inner img{width:calc((100% - 14px)/1.25)}
+  .car-inner img{width:calc((100% - 14px)/1.25);height:min(300px,46vh)}
   .car-inner{gap:14px}
 }
 @media (max-width:480px){
   .edu-grid{grid-template-columns:1fr 1fr}
   .edu img{height:64px}
+}
+
+/* ---------- невысокие и квадратные экраны (десктоп) ---------- */
+@media (max-height:820px) and (min-width:861px){
+  section{padding:48px 0}
+  .hero{padding:48px 0 30px}
+  .portrait{width:min(230px,56vw)}
+  .portrait-box{margin-top:28px}
+  .badges{margin-top:24px}
+  .pic img{max-height:min(56vh,440px)}
+  .duo img{max-height:min(48vh,380px)}
+  .car-inner img{height:min(320px,46vh)}
+  .edu-grid{gap:14px}
+  .sec-head{margin-bottom:30px}
+}
+
+/* ---------- очень низкие окна (ноут в половине экрана и т.п.) ---------- */
+@media (max-height:640px){
+  .pic img{max-height:min(52vh,360px)}
+  .duo img{max-height:44vh}
+  .car-inner img{height:38vh}
+  .portrait{width:min(190px,48vw)}
+  .row{gap:34px}
 }
