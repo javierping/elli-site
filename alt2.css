@@ -21,7 +21,7 @@
 /* ---- format ---- */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .duo figure{position:relative;border-radius:10px;overflow:hidden}
-.duo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;transition:transform .8s cubic-bezier(.25,.8,.35,1)}
+.duo img{width:100%;aspect-ratio:3/4;max-height:min(56vh,440px);object-fit:cover;border-radius:10px;transition:transform .8s cubic-bezier(.25,.8,.35,1)}
 .duo figure:hover img{transform:scale(1.045)}
 .duo figcaption{
   position:absolute;left:10px;right:10px;bottom:10px;
@@ -61,7 +61,7 @@ footer a{color:var(--rose-deep);text-decoration:none;font-weight:400}
 .car-inner{display:flex;gap:20px;transition:transform .55s cubic-bezier(.25,.8,.35,1);will-change:transform}
 .car-viewport.dragging .car-inner{transition:none}
 .car-inner img{
-  flex:0 0 auto;min-width:0;width:calc((100% - 40px)/3);height:380px;object-fit:cover;
+  flex:0 0 auto;min-width:0;width:calc((100% - 40px)/3);height:min(380px,52vh);object-fit:cover;
   border-radius:8px;user-select:none;-webkit-user-drag:none;
   opacity:.92;transition:opacity .5s,transform .7s cubic-bezier(.25,.8,.35,1);
 }
@@ -87,7 +87,7 @@ footer a{color:var(--rose-deep);text-decoration:none;font-weight:400}
   .edu-grid{grid-template-columns:repeat(2,1fr)}
   section{padding:56px 0}
   .car{padding:0 10px}
-  .car-inner img{width:calc((100% - 14px)/1.25);height:330px}
+  .car-inner img{width:calc((100% - 14px)/1.25);height:min(300px,46vh)}
   .car-inner{gap:14px}
 }
 @media (max-width:480px){.edu-grid{grid-template-columns:1fr 1fr}.edu img{height:60px}}
