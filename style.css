@@ -129,6 +129,16 @@ footer a{color:var(--accent-deep);text-decoration:none;font-weight:400}
   .edu img{height:64px}
 }
 
+/* ---------- faq ---------- */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-list details{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin-bottom:12px;transition:border-color .25s}
+.faq-list details[open]{border-color:var(--accent-line)}
+.faq-list summary{cursor:pointer;font-weight:600;color:var(--text);list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:'+';font-family:Georgia,serif;color:var(--accent-deep);font-size:1.3rem;flex:none;line-height:1}
+.faq-list details[open] summary::after{content:'–'}
+.faq-list details p{margin-top:12px;color:#5d5154;font-weight:400}
+
 /* ---------- невысокие и квадратные экраны (десктоп) ---------- */
 @media (max-height:820px) and (min-width:861px){
   section{padding:48px 0}
