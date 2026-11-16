@@ -16,7 +16,7 @@
 .edu span{display:block;font-size:.86rem;line-height:1.45;color:#5d5154}
 
 /* ---------- pricing ---------- */
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:960px;margin-inline:auto}
 .price{
   background:var(--card);border:1px solid var(--border);border-radius:16px;
   padding:30px 20px;text-align:center;
